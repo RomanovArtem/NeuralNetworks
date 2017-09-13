@@ -23,6 +23,8 @@ namespace NeuralNetworksLab1
         public MainWindow()
         {
             InitializeComponent();
+            var mainViewModel =  new MainViewModel();
+
         }
     }
 }

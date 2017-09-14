@@ -51,7 +51,8 @@
                         <MenuItem Header="Загрузить параметры из файла" Margin="263,10,529,0"></MenuItem>
                         <MenuItem Header="Сохранить параметры в файл" Margin="517,10,275,0"></MenuItem>
                     </Grid>
-                    <TextBlock HorizontalAlignment="Left" Margin="266,63,0,0" TextWrapping="Wrap" Text="Модель Нейрона" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="42,63,306,0" Text="Модель Нейрона" VerticalAlignment="Top"  TextAlignment="Center" Width="737"/>
+                    <Image HorizontalAlignment="Left" Height="313" VerticalAlignment="Top" Width="737" Margin="42,101,0,0" Source="../Resources/neuron.png" Stretch="Fill"/>
 
 
                     <Grid HorizontalAlignment="Left" Height="310" Margin="10,419,0,0" VerticalAlignment="Top" Width="827">

@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NeuralNetworksLab1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="800" Width="1100">
+    <Grid Margin="0,0,0,0">
+        <TabControl HorizontalAlignment="Left" Height="754" Margin="5,5,0,0" VerticalAlignment="Top" Width="1077">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-14,-513">
+                    <TextBlock TextAlignment="Center" Margin="842,63,28,1152">Текущие значения параметров</TextBlock>
+
+                    <GroupBox Header="Параметры нейрона" HorizontalAlignment="Left" Height="192" VerticalAlignment="Top" Width="215" Margin="842,101,0,0">
+                        <StackPanel>
+                            <TextBlock Margin="0,15,0,0">Весовые коэффициенты</TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                <Label VerticalAlignment="Center">w1 =</Label>
+                                <TextBox Text="{Binding W1}" MinWidth="150"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <Label VerticalAlignment="Center">w2 =</Label>
+                                <TextBox Text="{Binding W2}" MinWidth="150"/>
+                            </StackPanel>
+                            <TextBlock Margin="0,15,0,0">Смещение</TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                <Label VerticalAlignment="Center" Content="θ =" Width="37"/>
+                                <TextBox Text="{Binding W0}" MinWidth="150" Width="123"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Входы" HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="215" Margin="842,325,0,0">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                                <Label VerticalAlignment="Center">x =</Label>
+                                <TextBox Text="{Binding InputX}" MinWidth="150"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <Label VerticalAlignment="Center">y =</Label>
+                                <TextBox Text="{Binding InputY}" MinWidth="150"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="215" Margin="842,452,0,0" Orientation="Horizontal" Height="26">
+                            <Label VerticalAlignment="Center" Width="63">Выход</Label>
+                        <TextBox Text="{Binding Output}" MinWidth="150" Height="26" VerticalAlignment="Top"/>
+                    </StackPanel>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-5,-508"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

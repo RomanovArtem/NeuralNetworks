@@ -9,7 +9,7 @@
     <Grid Margin="0,0,0,0">
         <TabControl HorizontalAlignment="Left" Height="754" Margin="5,5,0,0" VerticalAlignment="Top" Width="1077">
             <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-14,-513">
+                <Grid Background="#FFE5E5E5" Margin="-2,0,-12,-513">
                     <TextBlock TextAlignment="Center" Margin="842,63,28,1152">Текущие значения параметров</TextBlock>
 
                     <GroupBox Header="Параметры нейрона" HorizontalAlignment="Left" Height="192" VerticalAlignment="Top" Width="215" Margin="842,101,0,0">
@@ -43,9 +43,33 @@
                         </StackPanel>
                     </GroupBox>
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="215" Margin="842,452,0,0" Orientation="Horizontal" Height="26">
-                            <Label VerticalAlignment="Center" Width="63">Выход</Label>
+                        <Label VerticalAlignment="Center" Width="63">Выход</Label>
                         <TextBox Text="{Binding Output}" MinWidth="150" Height="26" VerticalAlignment="Top"/>
                     </StackPanel>
+                    <Grid HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="1075">
+                        <MenuItem Header="Вычислить выход нейрона" RenderTransformOrigin="0.5,1.8" Margin="10,10,829,0"></MenuItem>
+                        <MenuItem Header="Загрузить параметры из файла" Margin="263,10,529,0"></MenuItem>
+                        <MenuItem Header="Сохранить параметры в файл" Margin="517,10,275,0"></MenuItem>
+                    </Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="266,63,0,0" TextWrapping="Wrap" Text="Модель Нейрона" VerticalAlignment="Top"/>
+
+
+                    <Grid HorizontalAlignment="Left" Height="310" Margin="10,419,0,0" VerticalAlignment="Top" Width="827">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Активационная функция" VerticalAlignment="Top" Margin="117,10,0,0"/>
+
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Выберите функцию" VerticalAlignment="Top" Margin="522,10,0,0"/>
+                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="522,40,0,0">
+                            <ComboBoxItem>Линейная</ComboBoxItem>
+                            <ComboBoxItem>Пороговая</ComboBoxItem>
+                            <ComboBoxItem>Сигмоидальная</ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Общий вид функции" VerticalAlignment="Top" Margin="522,97,0,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="522,172,0,85">
+                            <TextBlock  VerticalAlignment="Center " HorizontalAlignment="Center" Margin="0,18,0,19" Width="139">Коэффициент усиления</TextBlock>
+                            <TextBox Text="{Binding Coefficient}" MinWidth="50" Margin="0,13,0,14"/>
+                        </StackPanel>
+                    </Grid>
+
 
 
                 </Grid>

@@ -69,6 +69,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Networks\ActivationFunctions\IActivationFunction.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="PointsLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

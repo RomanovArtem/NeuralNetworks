@@ -18,6 +18,13 @@ namespace NeuralNetworksLab1
             LoadPoints();
         }
 
+
+        private void SetActivationFunction()
+        {
+            
+        }
+
+
         public List<Point> Points
         {
             get { return _points; }

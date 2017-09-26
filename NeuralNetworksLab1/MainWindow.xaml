@@ -4,8 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NeuralNetworksLab1"
+        xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" 
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1100">
+    
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5 10"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid Margin="0,0,0,0">
         <TabControl HorizontalAlignment="Left" Height="754" Margin="5,5,0,0" VerticalAlignment="Top" Width="1077">
             <TabItem Header="Искусственный нейрон" Margin="-2,-2,-12,0">
@@ -55,7 +63,7 @@
                         <MenuItem Header="Сохранить параметры в файл" Margin="517,10,275,0"></MenuItem>
                     </Grid>
                     <TextBlock HorizontalAlignment="Center" Margin="42,63,306,0" Text="Модель Нейрона" VerticalAlignment="Top"  TextAlignment="Center" Width="737"/>
-                    <Image HorizontalAlignment="Left" Height="313" VerticalAlignment="Top" Width="737" Margin="42,101,0,0" Source="../Resources/neuron.png" Stretch="Fill" Grid.Column="0"></Image>
+                    <Image HorizontalAlignment="Left" Height="313" VerticalAlignment="Top" Width="737" Margin="42,101,0,0" Source="/Resources/neuron.png" Stretch="Fill" Grid.Column="0"></Image>
 
 
                     <Grid HorizontalAlignment="Left" Height="310" Margin="10,419,0,0" VerticalAlignment="Top" Width="827">
@@ -70,7 +78,7 @@
                         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Общий вид функции" VerticalAlignment="Top" Margin="522,97,0,0"/>
                         <StackPanel Orientation="Horizontal" Margin="522,172,0,85">
                             <TextBlock  VerticalAlignment="Center " HorizontalAlignment="Center" Margin="0,18,0,19" Width="139">Коэффициент усиления</TextBlock>
-                            <TextBox Text="{Binding Coefficient}" MinWidth="50" Margin="0,13,0,14"/>
+                            <TextBox Text="" MinWidth="50" Margin="0,13,0,14"/>
                         </StackPanel>
                     </Grid>
 
@@ -80,7 +88,12 @@
             </TabItem>
             <TabItem Header="Обучение
                      " Margin="12,-2,63,0">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-5,-508"/>
+                <Grid Background="#FFE5E5E5" Margin="0,0,-5,-508">
+                    <Grid Column="0">
+                        <oxy:PlotView Model="{Binding PlotModel}">
+                        </oxy:PlotView>
+                    </Grid>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>

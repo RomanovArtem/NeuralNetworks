@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
+using NeuralNetworksLab1.Models.Networks.ActivationFunctions;
+using OxyPlot;
 
 namespace NeuralNetworksLab1
 {
@@ -12,16 +14,20 @@ namespace NeuralNetworksLab1
     {
 
         private List<Point> _points;
+        private IActivationFunction[] _activationFunction;
 
         public MainViewModel()
         {
-            LoadPoints();
+          //  LoadPoints();
         }
 
 
         private void SetActivationFunction()
         {
-            
+            _activationFunction = new IActivationFunction[3];
+            _activationFunction[0] = new LinearAF();
+            _activationFunction[1] = new BipolarAF();
+            _activationFunction[2] = new SigmoidalAF();
         }
 
 
@@ -30,6 +36,9 @@ namespace NeuralNetworksLab1
             get { return _points; }
             set { _points = value; }
         }
+
+        public PlotModel PlotModel { get; private set; }
+
 
         private void LoadPoints()
         {
@@ -41,6 +50,12 @@ namespace NeuralNetworksLab1
 
             var points = PointsLoader.GetPoints(dialog.FileName);
             Points = new List<Point>(points);
+            PutPointsOnChart();
+        }
+
+        private void PutPointsOnChart()
+        {
+            //
         }
     }
 }
